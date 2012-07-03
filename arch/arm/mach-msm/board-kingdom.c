@@ -170,7 +170,7 @@ static struct camera_flash_cfg msm_camera_sensor_flash_cfg = {
        .camera_flash           = flashlight_control,
        .num_flash_levels       = FLASHLIGHT_NUM,
        .low_temp_limit         = 10,/*0517 : Rollback by power team*/
-       .low_cap_limit          = 15,
+       .low_cap_limit          = 5,
 };
 
 static int pm8058_gpios_init(struct pm8058_chip *pm_chip)
