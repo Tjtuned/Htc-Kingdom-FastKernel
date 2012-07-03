@@ -103,29 +103,29 @@ static struct cpufreq_frequency_table freq_table[] = {
 #define SRC_LPXO (-2)
 #define SRC_AXI  (-1)
 static struct clkctl_acpu_speed acpu_freq_tbl[] = {
-        { 24576,  SRC_LPXO, 0, 0,  30720,  925, VDD_RAW(925) },
-	{ 61440,  PLL_3,    5, 11, 61440,  925, VDD_RAW(925) },
-	{ 122880, PLL_3,    5, 5,  61440,  925, VDD_RAW(925) },
-	{ 184320, PLL_3,    5, 4,  61440,  925, VDD_RAW(925) },
-	{ MAX_AXI_KHZ, SRC_AXI, 1, 0, 61440, 925, VDD_RAW(925) },
-	{ 245760, PLL_3,    5, 2,  61440,  925, VDD_RAW(925) },
-	{ 368640, PLL_3,    5, 1,  122800, 925, VDD_RAW(925) },
+        { 24576,  SRC_LPXO, 0, 0,  30720,  900, VDD_RAW(900) },
+	{ 61440,  PLL_3,    5, 11, 61440,  900, VDD_RAW(900) },
+	{ 122880, PLL_3,    5, 5,  61440,  900, VDD_RAW(900) },
+	{ 184320, PLL_3,    5, 4,  61440,  900, VDD_RAW(900) },
+	{ MAX_AXI_KHZ, SRC_AXI, 1, 0, 61440, 900, VDD_RAW(900) },
+	{ 245760, PLL_3,    5, 2,  61440,  900, VDD_RAW(900) },
+	{ 368640, PLL_3,    5, 1,  122800, 900, VDD_RAW(900) },
 	{ 768000, PLL_1,    2, 0,  153600, 950, VDD_RAW(950) },
 	/* ACPU >= 806.4MHz requires MSMC1 @ 1.2V. Voting for
 	 * AXI @ 192MHz accomplishes this implicitly. 806.4MHz
 	 * is updated to 1024MHz at runtime for QSD8x55.
          * Make sure any freq based from PLL_2 is a multiple of 9600
          for 1200mhz DEVICES (Design 4g/Hero S!*/
-	{ 806400, PLL_2,    3, 0,  192000, 950, VDD_RAW(950) }, 
-        { 1113600, PLL_2,   3, 0,  192000, 1075, VDD_RAW(1075) },
-        { 1209600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },    
-	{ 1305600, PLL_2,   3, 0,  192000, 1125, VDD_RAW(1125) }, 
-	{ 1401600, PLL_2,   3, 0,  192000, 1175, VDD_RAW(1175) }, 
-	{ 1516800, PLL_2,   3, 0,  192000, 1250, VDD_RAW(1250) }, 
-	{ 1612800, PLL_2,   3, 0,  192000, 1300, VDD_RAW(1300) }, 
-	{ 1708800, PLL_2,   3, 0,  192000, 1350, VDD_RAW(1350) }, 
-	{ 1804800, PLL_2,   3, 0,  192000, 1400, VDD_RAW(1400) }, 
-        { 1920000, PLL_2,   3, 0,  192000, 1450, VDD_RAW(1450) },
+	{ 806400, PLL_2,    3, 0,  192000, 975, VDD_RAW(975) }, 
+        { 1113600, PLL_2,   3, 0,  192000, 1050, VDD_RAW(1050) },
+        { 1209600, PLL_2,   3, 0,  192000, 1125, VDD_RAW(1125) },    
+	{ 1305600, PLL_2,   3, 0,  192000, 1150, VDD_RAW(1150) }, 
+	{ 1401600, PLL_2,   3, 0,  192000, 1225, VDD_RAW(1225) }, 
+	{ 1516800, PLL_2,   3, 0,  192000, 1275, VDD_RAW(1275) }, 
+	{ 1612800, PLL_2,   3, 0,  192000, 1325, VDD_RAW(1325) }, 
+	{ 1708800, PLL_2,   3, 0,  192000, 1375, VDD_RAW(1375) }, 
+	{ 1804800, PLL_2,   3, 0,  192000, 1450, VDD_RAW(1450) }, 
+        { 1920000, PLL_2,   3, 0,  192000, 1500, VDD_RAW(1500) },
 	{ 0 }
 };
 static unsigned long max_axi_rate;
