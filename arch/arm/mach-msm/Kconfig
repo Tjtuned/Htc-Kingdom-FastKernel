@@ -1852,11 +1852,16 @@ config ACPUCLK_SET_RATE_DEBUG
 		Enable acpuclk_set_rate debug.
 		Will dump process stack which called acpuclk_set_rate
 
-config ACPUCLOCK_LIMIT_768MHZ
-	bool "Limit the CPU frequency at 768MHz"
+config ACPUCLOCK_OVERCLOCKING
+	bool "Enable support for CPU overclocking"
 	default n
-	help
-		Support to limit the CPU frequency at 768MHz.
+	depends on CPU_FREQ && !PERFLOCK
+	depends on ARCH_MSM7X30
+
+config INSANE_SPEEDS
+        bool "Enable support for possibly unstable insane CPU frequencies"
+        default n
+        depends on ACPUCLOCK_OVERCLOCKING
 
 config HTC_SMEM_MSMC1C2_DEBUG
 	bool "MSMC1/MSMC2 shared memory debug"
