@@ -162,8 +162,8 @@ late_initcall(perflock_screen_policy_init);
 #endif
 
 #if 0
-static unsigned int policy_min = CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN;
-static unsigned int policy_max = CONFIG_MSM_CPU_FREQ_ONDEMAND_MAX;
+static unsigned int policy_min = CONFIG_MSM_CPU_FREQ_MIN;
+static unsigned int policy_max = CONFIG_MSM_CPU_FREQ_MAX;
 #else
 static unsigned int policy_min;
 static unsigned int policy_max;
@@ -218,7 +218,7 @@ static int perflock_notifier_call(struct notifier_block *self,
 				pr_info("%s: screen_off_policy_req %d,"
 					"policy_min %d\n", __func__,
 					screen_off_policy_req,
-					CONFIG_MSM_CPU_FREQ_ONDEMAND_MIN);
+					CONFIG_MSM_CPU_FREQ_MIN);
 			policy_min = CONFIG_PERFLOCK_SCREEN_OFF_MIN;
 			policy_max = CONFIG_PERFLOCK_SCREEN_OFF_MAX;
 			screen_off_policy_req--;
