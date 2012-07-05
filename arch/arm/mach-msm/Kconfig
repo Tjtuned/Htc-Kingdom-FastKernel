@@ -1460,6 +1460,14 @@ config MSM_CPU_FREQ_ONDEMAND_MIN
 	int "Min"
 	default 245760
 
+config INSANE_SPEEDS
+        bool "Enable support for possibly unstable insane CPU frequencies"
+        default n
+
+config UNLOCK_184MHZ
+	bool "Enable support for 184mhz step"
+	default n
+
 config MSM_HW3D
 	tristate "MSM Hardware 3D Register Driver"
 	depends on EARLYSUSPEND
@@ -1851,17 +1859,6 @@ config ACPUCLK_SET_RATE_DEBUG
 	help
 		Enable acpuclk_set_rate debug.
 		Will dump process stack which called acpuclk_set_rate
-
-config ACPUCLOCK_OVERCLOCKING
-	bool "Enable support for CPU overclocking"
-	default n
-	depends on CPU_FREQ && !PERFLOCK
-	depends on ARCH_MSM7X30
-
-config INSANE_SPEEDS
-        bool "Enable support for possibly unstable insane CPU frequencies"
-        default n
-        depends on ACPUCLOCK_OVERCLOCKING
 
 config HTC_SMEM_MSMC1C2_DEBUG
 	bool "MSMC1/MSMC2 shared memory debug"
