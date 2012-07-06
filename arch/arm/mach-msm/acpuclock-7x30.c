@@ -88,8 +88,30 @@ static struct cpufreq_frequency_table freq_table[] = {
 	{ 1, 245760 },
 	{ 2, 368640 },
 	{ 3, 768000 },
+        { 4, 806400 },
+	{ 5, 902400 },
+        { 6, 1017600 },
+        { 7, 1113600 },
+        { 8, 1209600 }, 
+	{ 9, 1305600 },
+	{ 10, 1401600 },
+	{ 11, 1516800 },
+	{ 12, 1612800 },
+	{ 13, 1708800 },
+	{ 14, 1804800 },
+    #ifdef CONFIG_INSANE_SPEEDS
+        { 15, 1920000 },	
+	{ 16, CPUFREQ_TABLE_END },
+    #else
+        { 15, CPUFREQ_TABLE_END },
+    #endif
+#else
+        { 0, 245760 },
+	{ 1, 368640 },
+	{ 2, 768000 },
+        { 3, 806400 },
 	{ 4, 902400 },
-        { 5, 1024000 },
+        { 5, 1017600 },
         { 6, 1113600 },
         { 7, 1209600 }, 
 	{ 8, 1305600 },
@@ -103,26 +125,6 @@ static struct cpufreq_frequency_table freq_table[] = {
 	{ 15, CPUFREQ_TABLE_END },
     #else
         { 14, CPUFREQ_TABLE_END },
-    #endif
-#else
-        { 0, 245760 },
-	{ 1, 368640 },
-	{ 2, 768000 },
-	{ 3, 902400 },
-        { 4, 1024000 },
-        { 5, 1113600 },
-        { 6, 1209600 }, 
-	{ 7, 1305600 },
-	{ 8, 1401600 },
-	{ 9, 1516800 },
-	{ 10, 1612800 },
-	{ 11, 1708800 },
-	{ 12, 1804800 },
-    #ifdef CONFIG_INSANE_SPEEDS
-        { 13, 1920000 },	
-	{ 14, CPUFREQ_TABLE_END },
-    #else
-        { 13, CPUFREQ_TABLE_END },
     #endif
 #endif
 };
@@ -149,8 +151,9 @@ static struct clkctl_acpu_speed acpu_freq_tbl[] = {
 	 * is updated to 1024MHz at runtime for QSD8x55.
          * Make sure any freq based from PLL_2 is a multiple of 9600
          for 1200mhz DEVICES (Design 4g/Hero S!*/
+        { 806400, PLL_2,    3, 0,  192000, 1025, VDD_RAW(1025) },
 	{ 902400, PLL_2,    3, 0,  192000, 1050, VDD_RAW(1050) }, 
-        { 1024000, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },
+        { 1017600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },
         { 1113600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },
         { 1209600, PLL_2,   3, 0,  192000, 1125, VDD_RAW(1125) },    
 	{ 1305600, PLL_2,   3, 0,  192000, 1150, VDD_RAW(1150) }, 
