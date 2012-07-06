@@ -133,18 +133,13 @@ static struct cpufreq_frequency_table freq_table[] = {
 #define SRC_LPXO (-2)
 #define SRC_AXI  (-1)
 static struct clkctl_acpu_speed acpu_freq_tbl[] = {
-/*        { 24576,  SRC_LPXO, 0, 0,  30720,  925, VDD_RAW(925) },
-	{ 61440,  PLL_3,    5, 11, 61440,  925, VDD_RAW(925) },
-	{ 122880, PLL_3,    5, 5,  61440,  925, VDD_RAW(925) },
-	{ 184320, PLL_3,    5, 4,  61440,  925, VDD_RAW(925) },
-	{ MAX_AXI_KHZ, SRC_AXI, 1, 0, 61440, 925, VDD_RAW(925) },
-*/
-
-#ifdef CONFIG_UNLOCK_184MHZ
-	{ 184320, PLL_3,    5, 4,  61440,  900, VDD_RAW(900) },
-#endif
-	{ 245760, PLL_3,    5, 2,  61440,  925, VDD_RAW(925) },
-	{ 368640, PLL_3,    5, 1,  122800, 925, VDD_RAW(925) },
+        { 24576,  SRC_LPXO, 0, 0,  30720,  875, VDD_RAW(875) },
+	{ 61440,  PLL_3,    5, 11, 61440,  875, VDD_RAW(875) },
+	{ 122880, PLL_3,    5, 5,  61440,  875, VDD_RAW(875) },
+	{ 184320, PLL_3,    5, 4,  61440,  875, VDD_RAW(875) },
+	{ MAX_AXI_KHZ, SRC_AXI, 1, 0, 61440, 900, VDD_RAW(900) },
+	{ 245760, PLL_3,    5, 2,  61440,  900, VDD_RAW(900) },
+	{ 368640, PLL_3,    5, 1,  122800, 900, VDD_RAW(900) },
 	{ 768000, PLL_2,    2, 0,  192000, 1000, VDD_RAW(1000) },
 	/* ACPU >= 806.4MHz requires MSMC1 @ 1.2V. Voting for
 	 * AXI @ 192MHz accomplishes this implicitly. 806.4MHz
@@ -153,17 +148,17 @@ static struct clkctl_acpu_speed acpu_freq_tbl[] = {
          for 1200mhz DEVICES (Design 4g/Hero S!*/
         { 806400, PLL_2,    3, 0,  192000, 1025, VDD_RAW(1025) },
 	{ 902400, PLL_2,    3, 0,  192000, 1050, VDD_RAW(1050) }, 
-        { 1017600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },
+        { 1017600, PLL_2,   3, 0,  192000, 1075, VDD_RAW(1075) },
         { 1113600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },
-        { 1209600, PLL_2,   3, 0,  192000, 1125, VDD_RAW(1125) },    
+        { 1209600, PLL_2,   3, 0,  192000, 1100, VDD_RAW(1100) },    
 	{ 1305600, PLL_2,   3, 0,  192000, 1150, VDD_RAW(1150) }, 
 	{ 1401600, PLL_2,   3, 0,  192000, 1225, VDD_RAW(1225) }, 
 	{ 1516800, PLL_2,   3, 0,  192000, 1300, VDD_RAW(1300) }, 
-	{ 1612800, PLL_2,   3, 0,  192000, 1350, VDD_RAW(1350) }, 
+	{ 1612800, PLL_2,   3, 0,  192000, 1325, VDD_RAW(1325) }, 
 	{ 1708800, PLL_2,   3, 0,  192000, 1400, VDD_RAW(1400) }, 
 	{ 1804800, PLL_2,   3, 0,  192000, 1450, VDD_RAW(1450) }, 
 #ifdef CONFIG_INSANE_SPEEDS
-        { 1920000, PLL_2,   3, 0,  192000, 1525, VDD_RAW(1525) },
+        { 1920000, PLL_2,   3, 0,  199680, 1475, VDD_RAW(1475) },
 #endif
 	{ 0 }
 };
